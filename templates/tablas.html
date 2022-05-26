@@ -25,14 +25,12 @@
                     <th scope="col">Nivel de prioridad</th>
                 </tr>
             </thead>
+            <!-- Comando sde mostrar en la tabla los datos ingresados por el formulario-->
             <tbody>
                 {% for tarea in tareas_pen %}
                 <tr>
-                    <!--Mostrar la descripcion de la tarea-->
                     <th>{{tarea.tarea}}</th>
-                    <!--Mostrar correo de la tarea-->
                     <th>{{tarea.correo}}</th>
-                    <!--Mostrar prioridad de la tarea-->
                     <th>{{tarea.prioridad}}</th>
                 </tr>
                 {% endfor %}
