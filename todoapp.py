@@ -1,7 +1,7 @@
 #Importacion de libreria
 from flask import Flask, redirect, render_template, request, url_for
 #Clave de la app
-#Ruta donde esta los templates y la clave de flash
+#Ruta donde esta los templates 
 app = Flask(__name__, template_folder='templates')
 #Arreglo
 tareas_pen = []
