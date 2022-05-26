@@ -1,3 +1,4 @@
+#Importacion de libreria
 from flask import Flask, redirect, render_template, request, url_for, flash
 
 #Ruta donde esta los templates 
@@ -33,3 +34,23 @@ def enviar():
             tareas_pen.append({'tarea': tarea, 'correo': correo, 'prioridad': prioridad })
 
             return redirect(url_for('principal'))
+            
+#Controlador de la ruta para borrar
+@app.route('/borrar', methods=['POST'])
+def borrar():
+    if request.method == 'POST':
+        
+        if tareas_pen == []:
+
+            flash('No existen tareas en la lista')
+            return redirect(url_for('principal'))
+
+        else:
+            tareas_pen.clear()
+            flash('La lista de tareas fue borrada')
+            return redirect(url_for('principal'))
+
+
+#Ejecutar
+if __name__ == '__main__':
+    app.run(debug=True)
