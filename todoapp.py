@@ -25,11 +25,11 @@ def enviar():
             
 #Controlador de la ruta para borrar
 @app.route('/borrar', methods=['POST'])
-def borrar():
-    if request.method == 'POST':    
-        if tareas_pen == []:
-            return redirect(url_for('principal'))
+def borrar():  
+    if request.method == 'POST':
 
+            tareas_pen.clear()
+            return redirect(url_for('principal'))
 
 #Ejecutar
 if __name__ == '__main__':
