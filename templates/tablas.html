@@ -25,6 +25,20 @@
                     <th scope="col">Nivel de prioridad</th>
                 </tr>
             </thead>
+            <tbody>
+                {% for tarea in tareas_pen %}
+                <tr>
+                    <!--Mostrar la descripcion de la tarea-->
+                    <th>{{tarea.tarea}}</th>
+                    <!--Mostrar correo de la tarea-->
+                    <th>{{tarea.correo}}</th>
+                    <!--Mostrar prioridad de la tarea-->
+                    <th>{{tarea.prioridad}}</th>
+                </tr>
+                {% endfor %}
+            </tbody>
+    </table>
+</div>
     </div>
     <!-- Boton borrar nos ayudará a eliminar todos los registros de la tabla-->
     <form action="{{url_for('borrar')}}" method="post" class="card-body">
@@ -38,6 +52,7 @@
             <h2>Agregar tarea</h2>
         </center>
         <div class="row justify-content-center">
+            <form method="post" action="{{url_for('enviar')}}">
             <div class="col-md-4">
                 <!-- Ingresar el nombre-->
                 <div class="form-group">
