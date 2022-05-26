@@ -19,7 +19,6 @@ def principal():
 @app.route('/enviar', methods=['POST'])
 def enviar():
     if request.method == 'POST':
-
         tarea = request.form['tarea']
         correo = request.form['correo']
         prioridad = request.form['prioridad']
@@ -38,13 +37,12 @@ def enviar():
 #Controlador de la ruta para borrar
 @app.route('/borrar', methods=['POST'])
 def borrar():
-    if request.method == 'POST':
-        
+    if request.method == 'POST':    
         if tareas_pen == []:
-
+#Mensaje que no hay nada de borrar
             flash('No existen tareas en la lista')
             return redirect(url_for('principal'))
-
+#Mensaje que fue borrado con exito 
         else:
             tareas_pen.clear()
             flash('La lista de tareas fue borrada')
