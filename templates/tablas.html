@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Tareas Pendientes</title>
 </head>
+
 <body>
+    <!-- Tabla de las tareas utilizando boostrap-->
     <br>
     <div class="col-12" position-relative>
         <center>
@@ -21,5 +25,58 @@
                     <th scope="col">Nivel de prioridad</th>
                 </tr>
             </thead>
+    </div>
+    <!-- Boton borrar nos ayudará a eliminar todos los registros de la tabla-->
+    <form action="{{url_for('borrar')}}" method="post" class="card-body">
+        <center> <i class="fa fa-edit"><button type="submit" class="btn btn-warning">Eliminar</i></button>
+        </center>
+    </form>
+    <br>
+    <!--Formulario para gregar tareas con su respectivo y nivel de prioridad-->
+    <div class="col-12">
+        <center>
+            <h2>Agregar tarea</h2>
+        </center>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <!-- Ingresar el nombre-->
+                <div class="form-group">
+                    <label class="form-label">Nombre de la tarea</label>
+                    <input type="text" class="form-control" placeholder="Ingrese la descripcion de la tarea"
+                        name="tarea">
+                </div>
+                <!-- Ingresar el correo electronico-->
+                <div class="form-group">
+                    <label class="form-label">Correo electronico</label>
+                    <input type="email" class="form-control" placeholder="Ingrese el correo electronico" name="correo">
+                </div>
+                <!--Seleccionar el nivel de prioridad-->
+                <div class="form-group" class="col-md-4">
+                    <label class="form-label">Nivel de prioridad</label>
+                    <select class="form-control" name="prioridad">
+                        <option value="Bajo">Bajo</option>
+                        <option value="Medio">Medio</option>
+                        <option value="Alto">Alto</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <!-- Boton guardar nos permitira enviar los datos a la tabla-->
+            <center><i class="fa fa-edit"><button class="btn btn-success" type="submit">Guardar</i></button>
+            </center>
+        </div>
+    </div>
+    </form>
+    <!-- Enlaces de boostrap y de javascript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
